@@ -88,7 +88,7 @@ const AttemptQuiz = ({ match }) => {
 			<div className='loading'>
 				<h1>404 Quiz Not Found!</h1>
 				<div id='logo-name'>
-					<b>Quiz</b>dom
+					<b>Quiz</b>Tantra
 				</div>
 				<h3>
 					Go back to <Link to='/join-quiz'>Join Quiz </Link>Page.
@@ -104,7 +104,7 @@ const AttemptQuiz = ({ match }) => {
 					Creator.
 				</h2>
 				<div id='logo-name'>
-					<b>Quiz</b>dom
+					<b>Quiz</b>Tantra
 				</div>
 				<h3>
 					Go back to <Link to='/join-quiz'>Join Quiz </Link>Page.
@@ -116,7 +116,7 @@ const AttemptQuiz = ({ match }) => {
 			<div className='loading'>
 				<h2>You have already taken the Quiz.</h2>
 				<div id='logo-name'>
-					<b>Quiz</b>dom
+					<b>Quiz</b>Tantra
 				</div>
 				<h3>
 					Go back to <Link to='/join-quiz'>Join Quiz </Link>Page.
