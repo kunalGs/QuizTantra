@@ -16,7 +16,7 @@ const OneTimeDashboard = ({ user }) => {
 			<div id='dashboard-content'>
 				<div className='dash-btns'>
 					<h1 className='white'>
-						<b>Quiz</b>dom
+						<b>Quiz</b>Tantra
 					</h1>
 					<button className='button one-time-button' onClick={onDashboard}>
 						Dashboard
