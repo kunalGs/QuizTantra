@@ -1,0 +1,6 @@
+{
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true,
+	"javascript.preferences.quoteStyle": "single",
+	"git.ignoreLimitWarning": true
+}
