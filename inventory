@@ -1,0 +1,1 @@
+172.16.130.26 ansible_ssh_pass=kunal ansible_ssh_user=kunal
