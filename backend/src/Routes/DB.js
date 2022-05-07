@@ -1,12 +1,12 @@
 const MongoClient = require('mongodb')
 const Evaluate = require('../Algorithms/EvaluateQuiz')
 const ObjectId = require('mongodb').ObjectId
-require('dotenv').config()
-const CONNECTION_URL = process.env.CONNECTION_URL;
+require('dotenv').config({path:'/Users/kunalg/Documents/SPE_QuizTantra/backend/src/envo.env'})
+const CONNECTION_URLT = process.env.CONNECTION_URL;
 let db
 const DBStart = async () => {
 	console.log('DB server connecting...')
-	const client = await MongoClient.connect(CONNECTION_URL, {
+	const client = await MongoClient.connect(CONNECTION_URLT, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true
 	})

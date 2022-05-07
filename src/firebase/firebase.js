@@ -2,25 +2,23 @@ import firebase from 'firebase/app';
 import 'firebase/storage'
 import 'firebase/analytics'
 import { auth } from "firebase";
-//require("dotenv").config()
-
 const firebaseConfig = {
-	apiKey: "AIzaSyCh91XEuhA85JvIsA3bneSOgaFyLUbrApQ",
-	authDomain: "quiztantra-c3444.firebaseapp.com",
-	projectId: "quiztantra-c3444",
-	storageBucket: "quiztantra-c3444.appspot.com",
-	messagingSenderId: "993760891537",
-	appId: "1:993760891537:web:62f91dc81d89f750432530"
+	apiKey: "AIzaSyBWXFGj6AHAMGo_sO1cTy_E1oknPL7vKRY",
+	authDomain: "quiztantra.firebaseapp.com",
+	projectId: "quiztantra",
+	storageBucket: "quiztantra.appspot.com",
+	messagingSenderId: "153376884651",
+	appId: "1:153376884651:web:a087f3949faa28906934ee"
 };
   
 
-//apiKey: "AIzaSyCh91XEuhA85JvIsA3bneSOgaFyLUbrApQ",
-//authDomain: "quiztantra-c3444.firebaseapp.com",
-//projectId: "quiztantra-c3444",
-//storageBucket: "quiztantra-c3444.appspot.com",
-//messagingSenderId: "993760891537",
-//appId: "1:993760891537:web:62f91dc81d89f750432530",
-//measurementId: "G-LSDL8XJYFT"
+//apiKey: "AIzaSyBWXFGj6AHAMGo_sO1cTy_E1oknPL7vKRY",
+//  authDomain: "quiztantra.firebaseapp.com",
+//  projectId: "quiztantra",
+//  storageBucket: "quiztantra.appspot.com",
+//  messagingSenderId: "153376884651",
+//  appId: "1:153376884651:web:a087f3949faa28906934ee",
+//  measurementId: "G-VK24E3KVKP"
 
 firebase.initializeApp(firebaseConfig);
 //firebase.analytics();

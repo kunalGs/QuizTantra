@@ -4,7 +4,7 @@ const app = express()
 const path = require('path')
 const userRoute = require('./Routes/Users')
 const quizzesRoute = require('./Routes/Quizzes')
-require('dotenv').config()
+require('dotenv').config({path:'/Users/kunalg/Documents/SPE_QuizTantra/backend/src/envo.env'})
 const port = process.env.PORT || 8000;
 
 // Hosting Frontend
