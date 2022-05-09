@@ -5,7 +5,7 @@ const path = require('path')
 const userRoute = require('./Routes/Users')
 const quizzesRoute = require('./Routes/Quizzes')
 //require('dotenv').config({path:'/Users/kunalg/Documents/SPE_QuizTantra/backend/src/envo.env'})
-const port = process.env.PORTJ || 8000;
+const port = ${PORTJ} || 8000;
 
 // Hosting Frontend
 // Create a production build of the frontend and paste the files in the public folder
