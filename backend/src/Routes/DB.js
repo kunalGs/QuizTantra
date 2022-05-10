@@ -1,8 +1,8 @@
 const MongoClient = require('mongodb')
 const Evaluate = require('../Algorithms/EvaluateQuiz')
 const ObjectId = require('mongodb').ObjectId
-//require('dotenv').config({path:'/Users/kunalg/Documents/SPE_QuizTantra/backend/src/envo.env'})
-const CONNECTION_URLT = ${CONNECTION_URLS};
+require('dotenv').config()
+const CONNECTION_URLT = 'mongodb+srv://kunal:kunal@myproject.tousm.mongodb.net/myproject?retryWrites=true&w=majority';
 let db
 const DBStart = async () => {
 	console.log('DB server connecting...')

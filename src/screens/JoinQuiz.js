@@ -20,7 +20,7 @@ const JoinQuiz = () => {
 		<div id='join-quiz'>
 			<div id='join-quiz-div'>
 				<div id='logo-name'>
-					<b style={{ fontweight: 600 }}>Quiz</b>dom
+					<b style={{ fontweight: 600 }}>Quiz</b>Tantra
 				</div>
 				<input
 					value={code}
