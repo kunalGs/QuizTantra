@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom'
 import firebase from '../firebase/firebase'
 import LoadingScreen from './LoadingScreen'
 import AttemptedModal from './AttemptedModal'
+import { API } from "../config.js"
 // Speech Recognition Imports
 import SpeechRecognition, {
 	useSpeechRecognition
 } from 'react-speech-recognition'
+
 
 const AttemptBlindQuiz = ({ match }) => {
 	const [commands, setCommands] = useState([])
@@ -66,7 +68,7 @@ const AttemptBlindQuiz = ({ match }) => {
 	// Fetch Quiz Data useEffect
 	useEffect(() => {
 		const fetchQuiz = async () => {
-			const res = await fetch('/API/quizzes/join', {
+			const res = await fetch(`${API}/quizzes/join`, {
 				method: 'POST',
 				body: JSON.stringify({ quizId: quizCode, uid }),
 				headers: {
@@ -105,7 +107,7 @@ const AttemptBlindQuiz = ({ match }) => {
 	const submitQuiz = React.useCallback(async () => {
 		// send attemped Questions to backend
 		try {
-			const res = await fetch('/API/quizzes/submit', {
+			const res = await fetch(`${API}/quizzes/submit`, {
 				method: 'POST',
 				body: JSON.stringify({
 					uid,

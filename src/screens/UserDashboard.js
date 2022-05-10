@@ -4,6 +4,7 @@ import CreatedQuizCard from '../components/CreatedQuizCard'
 import JoinedQuizCard from '../components/JoinedQuizCard'
 import LoadingScreen from './LoadingScreen'
 import CreateQuiz from './CreateQuiz'
+import { API } from "../config.js";
 
 const UserDashboard = ({ user }) => {
 	const [createdQuizzes, setCreatedQuizzes] = useState([])
@@ -17,7 +18,7 @@ const UserDashboard = ({ user }) => {
 			return
 		}
 		const fetchQuizData = async () => {
-			const results = await fetch(`/API/users/${user.uid}`)
+			const results = await fetch(`${API}/users/${user.uid}`)
 			const quizData = await results.json()
 			if (quizData.createdQuiz) setCreatedQuizzes(quizData.createdQuiz)
 			if (quizData.attemptedQuiz) setAttemptedQuizzes(quizData.attemptedQuiz)
@@ -37,7 +38,7 @@ const UserDashboard = ({ user }) => {
 				questions,
 				isOpen,
 			})
-			const results = await fetch('/API/quizzes/edit', {
+			const results = await fetch(`{API}/quizzes/edit`, {
 				method: 'POST',
 				body: JSON.stringify({
 					quizId: createdQuizzes[editQuiz]._id,

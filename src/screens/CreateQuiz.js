@@ -5,7 +5,10 @@ import AddQuestionModal from '../components/AddQuestionModal'
 import QuestionsTable from '../components/QuestionsTable'
 import { Switch } from '@material-ui/core'
 import LoadingScreen from './LoadingScreen'
+import { API } from "../config.js";
+///Users/kunalg/Desktop/SPE_QuizTantra/src/config.js
 
+///Users/kunalg/Desktop/SPE_QuizTantra/src/screens/CreateQuiz.js
 const CreateQuiz = ({
 	user,
 	quizTitle,
@@ -47,7 +50,7 @@ const CreateQuiz = ({
 		console.log('Quiz Creation Starts...')
 		setLoading('start')
 		try {
-			const result = await fetch('/API/quizzes/create', {
+			const result = await fetch(`${API}/quizzes/create`, {
 				method: 'POST',
 				body: JSON.stringify({
 					title,

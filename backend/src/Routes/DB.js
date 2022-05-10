@@ -8,7 +8,7 @@ const DBStart = async () => {
 	console.log('DB server connecting...')
 	const client = await MongoClient.connect(CONNECTION_URLT, {
 		useNewUrlParser: true,
-		useUnifiedTopology: true
+		useUnifiedTopology: true,
 	})
 	console.log('DB Connected Successfully.')
 	db = client.db('quiztantra-project')

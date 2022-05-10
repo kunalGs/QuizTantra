@@ -7,6 +7,16 @@ const quizzesRoute = require('./Routes/Quizzes')
 require('dotenv').config({path:'./'})
 const port = 6500 ;
 
+const cors = require('cors');
+const corsOpt = {
+    origin: '*',
+    credentials: true,
+    methods: ['GET','POST','DELETE'],
+    allowedHeaders: ['Content-Type', 'x-auth-token'],
+    exposedHeaders: ['Content-Type', 'x-auth-token']
+};
+app.use(cors(corsOpt));
+
 // Hosting Frontend
 // Create a production build of the frontend and paste the files in the public folder
 app.use(express.static(path.join(__dirname, '/public/')))
