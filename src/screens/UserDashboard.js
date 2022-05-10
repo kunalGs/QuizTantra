@@ -38,7 +38,7 @@ const UserDashboard = ({ user }) => {
 				questions,
 				isOpen,
 			})
-			const results = await fetch(`{API}/quizzes/edit`, {
+			const results = await fetch(`${API}/quizzes/edit`, {
 				method: 'POST',
 				body: JSON.stringify({
 					quizId: createdQuizzes[editQuiz]._id,
