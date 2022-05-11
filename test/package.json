@@ -4,7 +4,7 @@
     "description": "unit test for firebase",
     "main": "test.js",
     "scripts": {
-      "test": "npm test"
+      "test": "test --exit"
     },
     "author": "hasnain",
     "license": "ISC",
