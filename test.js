@@ -1,5 +1,5 @@
 const request = require('supertest');
-const server = require('./src/server');
+const server = require('./backend/src/server');
 module.exports = server
 
 
