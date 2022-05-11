@@ -4,7 +4,9 @@ const app = express()
 const path = require('path')
 const userRoute = require('./Routes/Users')
 const quizzesRoute = require('./Routes/Quizzes')
-require('dotenv').config({path:'./'})
+const morgan = require('morgan')
+const fs = require('fs')
+require('dotenv').config()
 const port = 6500 ;
 
 const cors = require('cors');
@@ -25,6 +27,10 @@ app.use(express.static(path.join(__dirname, '/public/')))
 app.use(express.json())
 app.use('/API/users', userRoute)
 app.use('/API/quizzes', quizzesRoute)
+
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+
+app.use(morgan(':date :method :url :status :res[content-length] - :response-time ms',{stream:accessLogStream}));
 
 app.use('*', (req, res) => {
 	res.sendFile(path.join(__dirname, '/public/index.html'))

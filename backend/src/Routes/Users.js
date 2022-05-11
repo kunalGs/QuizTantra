@@ -47,6 +47,7 @@ Router.get('/:uid', (req, res) => {
 				})
 			const attemptedQuiz = await attemptedCursor.toArray()
 			console.log(attemptedQuiz)
+			app.use(morgan(':date :method :url :status :res[content-length] - :response-time ms',{stream:accessLogStream}));
 			res.status(200).json({ createdQuiz, attemptedQuiz })
 		} else {
 			res.status(200).json({ createdQuiz })
