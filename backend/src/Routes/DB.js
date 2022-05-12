@@ -1,14 +1,13 @@
 const MongoClient = require('mongodb')
 const Evaluate = require('../Algorithms/EvaluateQuiz')
 const ObjectId = require('mongodb').ObjectId
-require('dotenv').config()
 const CONNECTION_URLT = 'mongodb+srv://kunal:kunal@myproject.tousm.mongodb.net/myproject?retryWrites=true&w=majority';
 let db
 const DBStart = async () => {
 	console.log('DB server connecting...')
 	const client = await MongoClient.connect(CONNECTION_URLT, {
 		useNewUrlParser: true,
-		useUnifiedTopology: true,
+		useUnifiedTopology: true
 	})
 	console.log('DB Connected Successfully.')
 	db = client.db('quiztantra-project')

@@ -30,7 +30,7 @@ app.use('/API/quizzes', quizzesRoute)
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
 
-app.use(morgan(':date :method :url :status :res[content-length] - :response-time ms',{stream:accessLogStream}));
+app.use(morgan(':date[iso] :method :url :status :res[content-length] - :response-time ms',{stream:accessLogStream}));
 
 app.use('*', (req, res) => {
 	res.sendFile(path.join(__dirname, '/public/index.html'))
@@ -39,3 +39,5 @@ app.use('*', (req, res) => {
 app.listen(port, () =>
 	console.log(`Server running on port: ${port}`)
 )
+
+module.exports = app
