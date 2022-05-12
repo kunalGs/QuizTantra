@@ -14,23 +14,9 @@ services:
     networks:
       - mern-app
 
-  Elasticsearch:
-    image: elasticsearch:7.16.2
-    container_name: elasticsearch
-    restart: always
-    volumes:
-    - elastic_data:/usr/share/elasticsearch/data/
-    environment:
-      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
-      discovery.type: single-node    
-      depends_on: 
-          - api-server
-    ports:
-    - '9200:9200'
-    - '9300:9300'
-    networks:
-      - mern-app
-
+networks:
+   mern-app:
+     driver: bridge
  
 
   
