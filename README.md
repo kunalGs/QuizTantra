@@ -5,10 +5,12 @@ We have used a Node.js express and React framework to create this app.**The home
 Also, for Source Control Management we have used GitHub. To automate the continuous integration we have used Jenkins. The frontend and backend of the system is containerized using docker whereas container orchestration is done using Docker-Compose. Ansible is used for continuous deployment. For monitoring, ELK stack is used. 
 
 
-    The Blind Quiz Module works with the limited Speech Commands to interact with the App.
+The Blind Quiz Module works with the limited Speech Commands to interact with the App.
+
     Press space to turn the microphone on.
     Voice Commands:
-      ** ** Instructions: To listen to all the possible commands**.
+    
+      Instructions: To listen to all the possible commands.
         start Quiz or title: To listen the Quiz title and first Question.
         Select Option [Number] or Choose Option [Number]: To mark the option of the current Question.
         next question: to increment the question index and move to the next question and listen it.
@@ -16,4 +18,3 @@ Also, for Source Control Management we have used GitHub. To automate the continu
         Repeat Question [Number]: To listen a specific Question.
         Repeat Current Question: To repeat the current Question.
         submit quiz: to submit the quiz.
-**
