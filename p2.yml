@@ -1,0 +1,25 @@
+---
+- name: Pull docker image
+  hosts: all
+  tasks:
+    - name: copy docker compose file
+      copy:
+        src: ./docker-compose.yml
+        dest: ./
+
+    - name: Start docker service
+      service:
+        name: docker
+        state: started
+
+    - name: docker compose pull
+      command: docker-compose pull
+
+    - name: stop previous back-end container
+      shell: docker rm -f hassu786/majorproject:server
+
+    - name: stop previous front-end container
+      shell: docker rm -f hassu786/majorproject:client
+
+    - name: running docker compose file
+      shell: docker-compose up -d
