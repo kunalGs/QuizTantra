@@ -1,16 +1,16 @@
-version: '3'
+version: "3"
 services:
   react-app:
     image: hassu786/majorproject:client
     stdin_open: true
     ports:
-      - '3000:3000'
+      - "3000:3000"
     networks:
       - mern-app
   api-server:
     image: hassu786/majorproject:server
     ports:
-      - '6500:6500'
+      - "6500:6500"
     networks:
       - mern-app
 
