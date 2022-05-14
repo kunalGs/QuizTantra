@@ -16,9 +16,9 @@ DBStart()
 const withDB = async (operations, res) => {
 	try {
 		await operations(db)
-		// client.close()
+		//client.close()
 	} catch (error) {
-		console.log('Error connecting to DB : ', error)
+		console.log('Error connecting to DB MONGODB : ', error)
 		res.status(500).json({ message: 'Error Connecting to db ', error })
 	}
 }
@@ -55,6 +55,7 @@ createQuiz = async (quiz, res) => {
 			const addQuiz = {
 				$push: { createdQuiz: result.insertedId }
 			}
+			await db.collection('users').insertOne(query, addQuiz)
 			await db.collection('users').updateOne(query, addQuiz)
 			console.log('Quiz Added to Creator Document: ', result.insertedId)
 		})
@@ -107,6 +108,22 @@ submitQuiz = async (submittedQuiz, res) => {
 				}
 			)
 			// Update user's attempted quizzes
+			// await db.collection('users').insertOne(
+			// 	{ uid: submittedQuiz.uid },
+			// 	{
+			// 		$push: {
+			// 			attemptedQuiz: ObjectId(submittedQuiz.quizId)
+			// 		}
+			// 	}
+			// )
+		    await db.collection('users').insertOne(
+				{ uid: submittedQuiz.uid },
+				{
+					$push: {
+						attemptedQuiz: ObjectId(submittedQuiz.quizId)
+					}
+				}
+			)
 			await db.collection('users').updateOne(
 				{ uid: submittedQuiz.uid },
 				{

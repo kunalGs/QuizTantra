@@ -18,7 +18,7 @@ const UserDashboard = ({ user }) => {
 			return
 		}
 		const fetchQuizData = async () => {
-			const results = await fetch(`${API}/users/${user.uid}`)
+			const results = await fetch(`${API}/Users/${user.uid}`)
 			const quizData = await results.json()
 			if (quizData.createdQuiz) setCreatedQuizzes(quizData.createdQuiz)
 			if (quizData.attemptedQuiz) setAttemptedQuizzes(quizData.attemptedQuiz)

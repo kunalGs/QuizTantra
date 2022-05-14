@@ -28,10 +28,6 @@ app.use(express.json())
 app.use('/API/users', userRoute)
 app.use('/API/quizzes', quizzesRoute)
 
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
-
-app.use(morgan(':date[iso] :method :url :status :res[content-length] - :response-time ms',{stream:accessLogStream}));
-
 app.use('*', (req, res) => {
 	res.sendFile(path.join(__dirname, '/public/index.html'))
 })
